@@ -1,0 +1,441 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.Form..Create(BaseForm)
+Gui.Form..Caption("Issue Material to Flex")
+Gui.Form..Size(657,256)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..AlwaysOnTop(False)
+Gui.Form..FontName("Tahoma")
+Gui.Form..FontSize(8.25)
+Gui.Form..ControlBox(True)
+Gui.Form..MaxButton(False)
+Gui.Form..MinButton(False)
+Gui.Form..MousePointer(0)
+Gui.Form..Moveable(True)
+Gui.Form..Sizeable(True)
+Gui.Form..ShowInTaskBar(True)
+Gui.Form..TitleBar(True)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form.frame1.Create(Frame)
+Gui.Form.frame1.Enabled(True)
+Gui.Form.frame1.Visible(True)
+Gui.Form.frame1.Zorder(0)
+Gui.Form.frame1.Size(657,100)
+Gui.Form.frame1.Position(0,0)
+Gui.Form.frame1.Caption("Job Information")
+Gui.Form.frame1.FontName("Tahoma")
+Gui.Form.frame1.FontSize(8.25)
+Gui.Form.frame1.BorderStyle(1)
+Gui.Form.frame1.Dock(1)
+Gui.Form.frame1.TabStop(True)
+Gui.Form.frame1.TabIndex(10)
+Gui.Form.txtDesc.Create(TextBox,"",True,333,20,0,308,69,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtDesc.Parent("frame1")
+Gui.Form.txtDesc.Locked(True)
+Gui.Form.txtDesc.TabStop(True)
+Gui.Form.txtDesc.TabIndex(14)
+Gui.Form.txtPart.Create(TextBox,"",True,100,20,0,56,69,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtPart.Parent("frame1")
+Gui.Form.txtPart.Locked(True)
+Gui.Form.txtPart.TabStop(True)
+Gui.Form.txtPart.TabIndex(13)
+Gui.Form.lbl1.Create(Label,"Job",True,17,13,0,13,38,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl1.BorderStyle(0)
+Gui.Form.lbl1.Parent("frame1")
+Gui.Form.lbl2.Create(Label,"Suffix",True,28,13,0,244,38,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl2.BorderStyle(0)
+Gui.Form.lbl2.Parent("frame1")
+Gui.Form.lbl4.Create(Label,"Part",True,20,13,0,13,72,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl4.BorderStyle(0)
+Gui.Form.lbl4.Parent("frame1")
+Gui.Form.lbl5.Create(Label,"Description",True,53,13,0,244,72,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl5.BorderStyle(0)
+Gui.Form.lbl5.Parent("frame1")
+Gui.Form.txtJob.Create(TextBox,"",True,100,20,0,56,34,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtJob.Parent("frame1")
+Gui.Form.txtJob.Locked(True)
+Gui.Form.txtJob.TabStop(True)
+Gui.Form.txtJob.TabIndex(11)
+Gui.Form.txtSuffix.Create(TextBox,"",True,100,20,0,308,34,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtSuffix.Parent("frame1")
+Gui.Form.txtSuffix.Locked(True)
+Gui.Form.txtSuffix.TabStop(True)
+Gui.Form.txtSuffix.TabIndex(12)
+Gui.Form.frame2.Create(Frame)
+Gui.Form.frame2.Enabled(True)
+Gui.Form.frame2.Visible(True)
+Gui.Form.frame2.Zorder(0)
+Gui.Form.frame2.Size(657,125)
+Gui.Form.frame2.Position(0,101)
+Gui.Form.frame2.Caption("Lot Selection")
+Gui.Form.frame2.FontName("Tahoma")
+Gui.Form.frame2.FontSize(8.25)
+Gui.Form.frame2.BorderStyle(1)
+Gui.Form.frame2.Dock(2)
+Gui.Form.frame2.TabStop(True)
+Gui.Form.frame2.TabIndex(1)
+Gui.Form.cmdCancel.Create(Button)
+Gui.Form.cmdCancel.Enabled(True)
+Gui.Form.cmdCancel.Visible(True)
+Gui.Form.cmdCancel.Zorder(0)
+Gui.Form.cmdCancel.Size(75,24)
+Gui.Form.cmdCancel.Position(569,78)
+Gui.Form.cmdCancel.TabStop(True)
+Gui.Form.cmdCancel.TabIndex(5)
+Gui.Form.cmdCancel.Caption("Cancel")
+Gui.Form.cmdCancel.FontName("Tahoma")
+Gui.Form.cmdCancel.FontSize(8.25)
+Gui.Form.cmdCancel.Parent("frame2")
+Gui.Form.cmdCancel.Event(Click,Form_UnLoad)
+Gui.Form.cmdSave.Create(Button)
+Gui.Form.cmdSave.Enabled(True)
+Gui.Form.cmdSave.Visible(True)
+Gui.Form.cmdSave.Zorder(0)
+Gui.Form.cmdSave.Size(75,24)
+Gui.Form.cmdSave.Position(569,38)
+Gui.Form.cmdSave.Caption("Save")
+Gui.Form.cmdSave.FontName("Tahoma")
+Gui.Form.cmdSave.FontSize(8.25)
+Gui.Form.cmdSave.Parent("frame2")
+Gui.Form.cmdSave.Event(Click,cmdSave_Click)
+Gui.Form.cmdSave.TabStop(True)
+Gui.Form.cmdSave.TabIndex(4)
+Gui.Form.txtDiff.Create(TextBox,"",True,138,20,0,88,80,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtDiff.Parent("frame2")
+Gui.Form.txtDiff.TabStop(True)
+Gui.Form.txtDiff.TabIndex(7)
+Gui.Form.txtDiff.NumericOnly(1)
+Gui.Form.lbl9.Create(Label,"Qty To Issue",True,62,13,0,11,83,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl9.BorderStyle(0)
+Gui.Form.lbl9.Parent("frame2")
+Gui.Form.txtEndingWt1.Create(TextBox,"",True,79,20,0,477,38,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtEndingWt1.TabStop(True)
+Gui.Form.txtEndingWt1.TabIndex(3)
+Gui.Form.txtEndingWt1.Parent("frame2")
+Gui.Form.txtEndingWt1.Event(Change,txtEndingWt_Change)
+Gui.Form.txtEndingWt1.NumericOnly(2)
+Gui.Form.lblEnding1.Create(Label,"Ending {0}",True,51,13,0,415,42,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lblEnding1.BorderStyle(0)
+Gui.Form.lblEnding1.Parent("frame2")
+Gui.Form.txtStartingWt1.Create(TextBox,"",True,79,20,0,319,39,False,0,"Tahoma",8.25,,1)
+Gui.Form.txtStartingWt1.Parent("frame2")
+Gui.Form.txtStartingWt1.Locked(True)
+Gui.Form.txtStartingWt1.TabStop(True)
+Gui.Form.txtStartingWt1.TabIndex(6)
+Gui.Form.lblStarting1.Create(Label,"Starting {0}",True,57,13,0,251,44,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lblStarting1.BorderStyle(0)
+Gui.Form.lblStarting1.Parent("frame2")
+Gui.Form.txtLot.Create(TextBox,"",True,170,20,0,56,40,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtLot.Parent("frame2")
+Gui.Form.txtLot.TabStop(True)
+Gui.Form.txtLot.TabIndex(2)
+Gui.Form.txtLot.Event(LostFocus,txtLot_LostFocus)
+Gui.Form.lbl6.Create(Label,"Lot",True,15,13,0,12,44,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl6.BorderStyle(0)
+Gui.Form.lbl6.Parent("frame2")
+Gui.Form.lblStarting2.Create(Label,"Starting {0}",True,57,13,0,250,186,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lblStarting2.BorderStyle(0)
+Gui.Form.txtStartingWt2.Create(TextBox,"",True,79,20,0,319,181,False,0,"Tahoma",8.25,,1)
+Gui.Form.txtStartingWt2.TabStop(True)
+Gui.Form.txtStartingWt2.TabIndex(8)
+Gui.Form.lblEnding2.Create(Label,"Ending {0}",True,51,13,0,416,186,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lblEnding2.BorderStyle(0)
+Gui.Form.txtEndingWt2.Create(TextBox,"",True,79,20,0,477,182,False,0,"Tahoma",8.25,,1)
+Gui.Form.txtEndingWt2.TabStop(True)
+Gui.Form.txtEndingWt2.TabIndex(9)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+	v.Global.iLotRowIndex.Declare
+	v.Global.fConvFactor.Declare
+	v.Global.bDifference.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+	v.Local.sJSS.Declare
+	v.Local.sFile.Declare
+	v.Local.bExists.Declare
+	'Note: this script should be attached as a synchronous script on the script 1 hook
+	
+	f.Intrinsic.Control.SelectCase(v.Caller.Hook)
+		'Issue Material WO Chg
+		f.Intrinsic.Control.Case(28820)	
+			'This data is not passed to the Lot/Bin screen, so we have to store it in the GLOBAL var to make it accessible
+			f.Intrinsic.String.Build("{0}-{1}",v.Passed.000002, v.Passed.000003, v.Local.sJSS)
+			'Use a temp file to store
+			F.Intrinsic.Control.If(v.Caller.LocalGSSTempDir.Right1,=,"\")
+				f.Intrinsic.String.Build("{0}GCG_{1}_6894.txt",v.Caller.LocalGSSTempDir,V.Caller.User,v.Local.sFile)
+			F.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("{0}\GCG_{1}_6894.txt",v.Caller.LocalGSSTempDir,V.Caller.User,v.Local.sFile)
+			F.Intrinsic.Control.EndIf
+			f.Intrinsic.File.Exists(v.Local.sFile,v.Local.bExists)
+			f.Intrinsic.Control.If(v.Local.bExists)
+				f.Intrinsic.File.DeleteFile(v.Local.sFile)
+			f.Intrinsic.Control.EndIf
+			f.Intrinsic.File.String2File(v.Local.sFile,v.Local.sJSS)
+			'v.Passed.GLOBAL.Set(v.Local.sJSS)
+		'Populate
+		f.Intrinsic.Control.Case(32910)	
+			'Rename script 1
+			v.Passed.000217.Set("Issue By PO UM")
+		'Script 1
+		f.Intrinsic.Control.Case(32920)
+			f.Intrinsic.UI.UsePixels
+			f.Intrinsic.Control.CallSub(LoadCustomScreen)
+	f.Intrinsic.Control.EndSelect
+Program.Sub.Main.End
+
+Program.Sub.Form_UnLoad.Start
+	f.Intrinsic.Control.End
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.cmdSave_Click.Start
+	v.Local.iCnt.Declare
+	v.Local.iRowCnt.Declare
+	v.Local.sRet.Declare
+	v.Local.sBDFRow.Declare
+	'Check if the lot scanned was valid
+	f.Intrinsic.Control.If(v.Global.iLotRowIndex,>,-1)
+		'Quickly recalculate the qty to issue if something is in ending 1.  If not, we leave it alone and assume they manually entered it.
+		f.Intrinsic.Control.If(v.Screen.Form!txtEndingWt1.Text,!=,"")
+			f.Intrinsic.Control.CallSub(txtEndingWt_Change)
+		f.Intrinsic.Control.EndIf
+		
+		'Write to Qty To Issue back from the Difference field
+		f.Intrinsic.BDF.Clone("AUX001","Clone")
+		f.Intrinsic.BDF.ReadRowCount("AUX001",V.Local.iRowCnt)
+		f.Intrinsic.Math.Sub(v.Local.iRowCnt,1,v.Local.iRowCnt)
+		
+		f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.iRowCnt,1)
+			f.Intrinsic.BDF.ReadRow("AUX001",V.Local.iCnt,V.Local.sRet)
+			
+			'If the current row is the one where the lot number is, replace the Qty To Issue
+			F.Intrinsic.Control.If(V.Local.iCnt,=,V.Global.iLotRowIndex)
+				f.Intrinsic.String.Split(v.Local.sRet,"|~|",v.Local.sRet)
+				v.Local.sRet(13).Set(v.Screen.Form!txtDiff.Text)
+				f.Intrinsic.String.Join(v.local.sRet,"|~|",v.Local.sBDFRow)
+				v.Local.sRet.Redim(0,0)
+				v.Local.sRet.Set(v.Local.sBDFRow)
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.BDF.WriteRow("Clone",v.Local.sRet)
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+		
+		f.Intrinsic.BDF.Save("Clone","AUX001")
+		
+		f.Intrinsic.Control.End
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("Lot is invalid.  Please scan an existing lot.","Error")
+	f.Intrinsic.Control.EndIf
+		
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.LoadCustomScreen.Start
+	v.Local.sJSS.Declare
+	v.Local.sPartUMs.Declare
+	v.Local.sSQL.Declare
+	v.Local.sLabel.Declare
+	v.Local.sRet.Declare
+	v.Local.fEndingQty.Declare
+	v.Local.sFile.Declare
+	V.Local.bLoad.Declare(Boolean,False)
+	V.Local.iCount.Declare(Long,0)
+	V.Local.sPart.Declare(String,"")
+	
+	'Get temp file read in first
+	F.Intrinsic.Control.If(v.Caller.LocalGSSTempDir.Right1,=,"\")
+		f.Intrinsic.String.Build("{0}GCG_{1}_6894.txt",v.Caller.LocalGSSTempDir,V.Caller.User,v.Local.sFile)
+	F.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("{0}\GCG_{1}_6894.txt",v.Caller.LocalGSSTempDir,V.Caller.User,v.Local.sFile)
+	F.Intrinsic.Control.EndIf
+	
+	'handling slight delay with file still being locked by gab that fires on 28820 hook
+	F.Intrinsic.Control.DoUntil(V.Local.bLoad)
+		F.Intrinsic.Control.Try
+			f.Intrinsic.File.File2String(v.Local.sFile,v.Local.sJSS)
+			V.Local.bLoad.Set(True)
+		F.Intrinsic.Control.Catch
+			F.Intrinsic.UI.SleepMS(1)
+			F.Intrinsic.Math.Add(V.Local.iCount,1,V.Local.iCount)
+			F.Intrinsic.Control.If(V.Local.iCount,>,4)
+				f.Intrinsic.File.File2String(v.Local.sFile,v.Local.sJSS)
+				V.Local.bLoad.Set(True)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndTry
+	F.Intrinsic.Control.Loop
+	
+	f.Intrinsic.String.Split(v.Local.sJSS,"-",v.Local.sJSS)
+	V.Local.sJSS.RedimPreserve(0,1)
+	'Populate form with data from core screen
+	gui.Form.txtJob.Text(v.Local.sJSS(0))
+	gui.Form.txtSuffix.Text(v.Local.sJSS(1))
+	F.Intrinsic.Control.If(V.Passed.000002.Trim,=,"")
+		V.Local.sPart.Set(V.Passed.000001.Trim)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.RPad(V.Passed.000001," ",17,V.Local.sPart)
+		F.Intrinsic.String.Build("{0}{1}",V.Local.sPart,V.Passed.000002.Trim,V.Local.sPart)
+	F.Intrinsic.Control.EndIf
+	gui.Form.txtPart.Text(V.Local.sPart.Trim)
+	gui.Form.txtDesc.Text(v.Passed.000004)
+	
+	'Get the part's in and purch UMs
+	f.Intrinsic.String.Build("select UM_Inventory, UM_Purchasing, factor_conversion from v_inventory_all where part='{0}'",V.Local.sPart.Trim,v.Local.sSQL)
+	f.ODBC.Connection!con.opencompanyconnection(600)
+	f.odbc.Connection!con.ExecuteAndReturn(v.Local.sSQL,v.Local.sPartUMs)
+	f.Intrinsic.String.Split(v.Local.sPartUMs,"*!*",v.Local.sPartUMs)
+	V.Local.sPartUMs.RedimPreserve(0,2)
+	'If the part has a purchasing conv factor, show the second set of fields and change the captions.  The UM the user is entering the qty in should always be at the top.  The UM to be issued to the job should always be at the bottom.
+	f.Intrinsic.Control.If(v.Local.sPartUMs(2).Float,!=,0)
+		gui.Form.lblStarting2.Visible(True)
+		gui.Form.txtStartingWt2.Visible(True)
+		gui.Form.lblEnding2.Visible(True)
+		gui.Form.txtEndingWt2.Visible(True)
+		f.Intrinsic.String.Build(v.Screen.Form!lblStarting1.caption,v.Local.sPartUMs(1),v.Local.sLabel)
+		gui.Form.lblStarting1.Caption(v.Local.slabel)
+		f.Intrinsic.String.Build(v.Screen.Form!lblEnding1.caption,v.Local.sPartUMs(1),v.Local.sLabel)
+		gui.Form.lblEnding1.Caption(v.Local.sLabel)
+		
+		v.Global.fConvFactor.Set(v.Local.sPartUMs(2).float)
+		f.Intrinsic.Control.If(v.Local.sPartUMs(2).float,=,0)
+			v.Global.fConvFactor.Set(1)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Else
+		'If the part does not have a purchasing conversion factor, look up the job sequence to prefill the qty to issue with the qty needed on the job sequence, then use that to calculate the ending qty.
+		f.Intrinsic.String.Build("select hours_estimated-hours_actual as QtyToIssue from v_job_operations where job='{0}' and suffix='{1}' and part='{2}';",v.Screen.Form!txtJob.Text,v.Screen.Form!txtSuffix.Text,v.Screen.Form!txtPart.Text,v.Local.sSQL)
+		f.odbc.Connection!con.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+		f.Intrinsic.Control.If(v.Local.sRet,<>,"")
+			'This means we are evaulating an individual job
+			gui.Form.txtDiff.Text(v.Local.sRet)
+		F.Intrinsic.Control.Else
+			'Look in the flex schedule table 
+			f.Intrinsic.String.Build("select est_qty-act_qty as QtyToIssue from V_FLEX_SCHD_BASIS where SCHEDULE='{0}' and SCHED_SUF='{1}' and PART_NO='{2}';",v.Screen.Form!txtJob.Text,v.Screen.Form!txtSuffix.Text,v.Screen.Form!txtPart.Text,v.Local.sSQL)
+			f.odbc.Connection!con.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+			f.Intrinsic.Control.If(v.Local.sRet,<>,"")
+				gui.Form.txtDiff.Text(v.Local.sRet)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		
+		'If diff found, set to global variable to determine how ending weight is calc'd later
+		f.Intrinsic.Control.if(v.Screen.Form!txtDiff.Text,<>,"")
+			v.Global.bDifference.Set(True)
+			f.Intrinsic.Math.Sub(v.Screen.Form!txtStartingWt1.Text,v.Screen.Form!txtDiff.Text,v.Local.fEndingQty)
+			gui.Form.txtEndingWt1.Text(v.Local.fEndingQty.String)
+			gui.Form.txtEndingWt2.Text(v.Local.fEndingQty.String)
+		f.Intrinsic.Control.EndIf
+		
+		v.Global.fConvFactor.Set(v.Local.sPartUMs(2).float)
+		f.Intrinsic.Control.If(v.Local.sPartUMs(2).float,=,0)
+			v.Global.fConvFactor.Set(1)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build(v.Screen.Form!lblStarting2.caption,v.Local.sPartUMs(0),v.Local.sLabel)
+	gui.Form.lblStarting2.Caption(v.Local.slabel)
+	f.Intrinsic.String.Build(v.Screen.Form!lblEnding2.caption,v.Local.sPartUMs(0),v.Local.sLabel)
+	gui.Form.lblEnding2.Caption(v.Local.sLabel)
+	
+	'Load in the BDF
+	f.Intrinsic.BDF.load("AUX001","AUX001")
+	'Show the custom screen
+	gui.Form..Show
+'	gui.Form.txtLot.SetFocus
+'	gui.Form.txtLot.SetFocus
+Program.Sub.LoadCustomScreen.End
+Program.Sub.txtLot_LostFocus.Start
+	v.Local.sRet.Declare
+	v.Local.fStartingWt.Declare
+	V.Local.iBDFRowCnt.Declare
+	v.Local.iNextRow.Declare
+	v.Local.fEndingWt.Declare
+	v.Local.fDiff.Declare
+	'Look up the available qty of the lot number from the BDF.  This ensures the data is consistent between the screens and that the lot scanned exists in inventory.
+	f.Intrinsic.BDF.SeekRow("AUX001",2,0,V.Screen.Form!txtLot.Text,V.Global.iLotRowIndex)
+	
+	'If lot was not found, throw an error.  Else, get the qty available and write it to the starting weight
+	f.Intrinsic.Control.If(v.Global.iLotRowIndex,=,-1)
+		f.Intrinsic.UI.Msgbox("Lot is invalid.  Please scan an existing lot.","Error")
+		gui.Form.txtLot.Text("")
+		gui.Form.txtLot.SetFocus()
+	f.Intrinsic.Control.Else
+		F.Intrinsic.BDF.ReadRow("AUX001",V.Global.iLotRowIndex,v.Local.sRet)
+		f.Intrinsic.String.Split(v.Local.sRet,"|~|",v.Local.sRet)
+		
+		'Check the qty available on the lot.  If it is <= 0, loop until one is found.  If none are found, throw an error.
+		f.Intrinsic.Control.If(v.Local.sRet(8).float,<=,0)
+			'Get the number of rows in the BDF
+			f.Intrinsic.BDF.ReadRowCount("AUX001",V.Local.iBDFRowCnt)
+			'Set the rowCnt to the last index
+			f.Intrinsic.Math.Sub(v.Local.iBDFRowCnt,1,v.Local.iBDFRowCnt)
+			f.Intrinsic.Control.DoUntil(v.Global.iLotRowIndex,=,-1)
+				f.Intrinsic.Math.Add(v.Global.iLotRowIndex,1,v.Local.iNextRow)
+				f.Intrinsic.Control.If(v.Local.iNextRow,<=,v.Local.iBDFRowCnt)
+					
+				f.Intrinsic.Control.EndIf
+				f.Intrinsic.BDF.SeekRow("AUX001",2,v.Local.iNextRow,V.Screen.Form!txtLot.Text,V.Global.iLotRowIndex)
+				F.Intrinsic.Control.If(V.Global.iLotRowIndex,<>,-1)
+					'Lot was found, so evaluate the row
+					F.Intrinsic.BDF.ReadRow("AUX001",V.Global.iLotRowIndex,v.Local.sRet)
+					f.Intrinsic.String.Split(v.Local.sRet,"|~|",v.Local.sRet)
+					f.Intrinsic.Control.If(v.Local.sRet(8).float,>,0)
+						gui.Form.txtStartingWt2.Text(v.Local.sRet(8))
+						f.Intrinsic.Control.ExitDo()
+					f.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.Loop
+		f.Intrinsic.Control.Else
+			gui.Form.txtStartingWt2.Text(v.Local.sRet(8))
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.If(v.Local.sRet,=,"")
+			f.Intrinsic.UI.Msgbox("Lot exists but available qty is less than or equal to 0.  Please scan another lot.","ERROR")
+		f.Intrinsic.Control.Else
+			'Convert the starting qty to whatever the purch UM is
+	'		f.Intrinsic.Control.If(v.Global.fConvFactor,!=,0)
+				f.Intrinsic.Math.Div(v.Local.sRet(8).float,v.Global.fConvFactor,v.Local.fStartingWt)
+				gui.Form.txtStartingWt1.Text(v.Local.fStartingWt.String)
+				
+				'Calc the ending weight if the diff flag is set
+				f.Intrinsic.Control.If(v.Global.bDifference)
+					f.Intrinsic.Math.Sub(v.Local.fStartingWt,v.Screen.Form!txtDiff.Text,v.Local.fEndingWt)
+					
+					'If ending is less than 0, set the ending to zero and recalc the qty to issue
+					f.Intrinsic.Control.If(v.Local.fEndingWt,<,0)
+						f.Intrinsic.UI.Msgbox("The qty available is less than the qty needed for this job.  Resetting the qty to issue to consume the rest of this lot.","WARNING - Less Qty Available")
+						v.Local.fEndingWt.Set(0)
+						f.Intrinsic.Math.Sub(v.Local.fStartingWt,v.Local.fEndingWt,v.Local.fDiff)
+						gui.Form.txtDiff.Text(v.Local.fDiff.String)
+					f.Intrinsic.Control.EndIf
+					gui.Form.txtEndingWt2.Text(v.Local.fEndingWt.String)
+					gui.Form.txtEndingWt1.Text(v.Local.fEndingWt.String)
+				f.Intrinsic.Control.EndIf
+	'		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.Control.EndIf
+Program.Sub.txtLot_LostFocus.End
+Program.Sub.txtEndingWt_Change.Start
+	v.Local.fDiff.Declare
+	v.Local.fStartingWt.Declare
+	v.Local.fEndingWt.Declare
+	
+	'If the difference flag is checked, this means the program set the qty to issue for parts that have no conversion factor, so we do not need to recalc the qty to issue
+	f.Intrinsic.Control.If(v.Global.bDifference,=,False)
+		f.Intrinsic.Math.ConvertToFloat(v.Screen.Form!txtEndingWt1.Text,v.Local.fEndingWt)
+		
+		'Convert the inv ending qty if a conversion factor is present
+		f.Intrinsic.Math.Mult(v.Local.fEndingWt,v.Global.fConvFactor,v.Local.fEndingWt)
+		gui.Form.txtEndingWt2.Text(v.Local.fEndingWt.String)
+		
+		f.Intrinsic.Math.ConvertToFloat(v.Screen.Form!txtStartingWt2.Text,v.Local.fStartingWt)
+		
+		f.Intrinsic.Math.Sub(v.Local.fStartingWt,v.Local.fEndingWt,v.Local.fDiff)
+		gui.form.txtDiff.Text(v.Local.fDiff.String)
+	f.Intrinsic.Control.EndIf
+		
+Program.Sub.txtEndingWt_Change.End
+
+Program.Sub.Comments.Start
+${$5$}$20.1.8577.26074$}$1
+${$6$}$rking$}$20230804120258432$}$QNdZLVy4bWuiWa9jh1ZTiKHvMPldSPXeOdKBGbVX6sCZy7sNS3JkVclGB4Zsw1MctMGem5+J0Mo=
+Program.Sub.Comments.End
